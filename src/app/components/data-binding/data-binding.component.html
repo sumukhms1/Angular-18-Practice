@@ -1,0 +1,66 @@
+<p>data-binding works!</p>
+<div class="row">
+    <div class="col-4">
+        One Way Data-Binding from .ts to HTML
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-4">
+        string interpolation -- one-way binding
+        <div class="row">
+            <div class="col-4 bg-success">
+                <h4>{{courseName}}</h4> 
+            </div>
+            <div>
+                <input type="text" value="{{courseName}}" placeholder="Enter Text">
+
+                <input type="{{inputType}}"> //string interpolation     -    see .ts
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+            <h5>Property binding</h5>
+
+            <div [class]="myClassName">Danger</div> //put sqr brackets for class and no double curly braces needed
+
+            <input type="text" [value]="rollNo"> //property binding
+
+    </div>
+
+    <div class="col-4">
+        <button class="btn btn-success" (click)="showAlert('Welcome Angular 18')">Show Welcome</button>
+        <span (click)="showAlert('This Is From Span')">Click Me</span>
+
+    </div>
+
+    <div class="col-5">
+        <button class="btn btn-success" (click)="changeCourseName()">Change Name</button>  //basic two-way
+
+    </div>
+
+    <div class="col-5">
+        <input type="text" [(ngModel)]=courseName>   // real two-way binding
+    </div>
+
+    <div class="col-6">
+        <select [(ngModel)]="selectState">
+            <option value="">Select</option>
+            <option value="Goa">Goa</option>
+            <option value="Karnataka">Karnataka</option>        // two-way data binding -- can be changed from 
+            <option value="Kolkata">Kolkata</option>                 .ts to HTML and from HTML to .ts
+            <option value="Delhi">Delhi</option>        
+            
+        </select>
+    </div>
+
+    <div>
+        <h5>{{selectState}}</h5>
+    </div>
+
+    <div>
+        <h4>{{firstName()}}</h4>
+    </div>
+</div>
